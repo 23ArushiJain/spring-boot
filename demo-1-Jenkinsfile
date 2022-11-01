@@ -13,7 +13,7 @@ node ('maven') {
                 'PRD' : ['isProductionLike' : true, 'deploymentServer' : '', 'deploymentUser' : '']]
     
     stage ('git checkout step') {
-        git credentialsId: 'github-token', url: 'https://github.com/sachinbhuibar/spring-boot-hello-world.git'
+        git credentialsId: 'github-token', url: 'https://github.com/23arushijain/spring-boot.git'
     }
     
     stage ('maven build step') {
