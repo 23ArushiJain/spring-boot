@@ -1,0 +1,14 @@
+name: deployment playbook 
+hosts: uat deployment server
+remote user: ubuntu 
+become: true
+
+tasks:
+ -name: stop application service 
+  command: sudo systemctl stop spring-boot-hello-world service
+
+  -name: copy application Jan 
+   copy: src/target/spring-boot-hello-world-8.0.1-SNAPSHOT jar dest-deployabe/
+
+  -name: start application service 
+   command: sudo systemctl start spring-boot-hello-world service
